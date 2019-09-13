@@ -18,7 +18,7 @@
     -->
     <SkipValidatePackage>false</SkipValidatePackage>
 
-    <IsShipping>false</IsShipping>
+    <IsShippingPackage>false</IsShippingPackage>
   </PropertyGroup>
 
   <ItemGroup>
