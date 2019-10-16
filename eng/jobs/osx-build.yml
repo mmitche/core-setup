@@ -9,9 +9,10 @@ jobs:
     ${{ if ne(variables['System.TeamProject'], 'public') }}:
       name: Hosted Mac internal
   strategy:
-    matrix: 
-      debug:
-        _BuildConfig: Debug
+    matrix:
+      - ${{ in(variables['Build.Reason'], 'PullRequest')) }}:
+          debug:
+            _BuildConfig: Debug
       release:
         _BuildConfig: Release
   workspace:

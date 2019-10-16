@@ -8,9 +8,10 @@ parameters:
   packageDistroList: null
   skipTests: $(SkipTests)
   strategy:
-    matrix: 
-      debug:
-        _BuildConfig: Debug
+    matrix:
+      - ${{ in(variables['Build.Reason'], 'PullRequest')) }}:
+          debug:
+            _BuildConfig: Debug
       release:
         _BuildConfig: Release
   targetArchitecture: x64
