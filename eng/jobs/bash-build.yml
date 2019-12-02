@@ -96,7 +96,7 @@ jobs:
 
     steps:
 
-    - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+    - ${{ if ne(variables['System.TeamProject'], 'public') }}:
       - task: NuGetAuthenticate@0
 
     # Builds don't set user ID, so files might be owned by root and unable to be cleaned up by AzDO.

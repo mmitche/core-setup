@@ -22,7 +22,7 @@ jobs:
       /p:PortableBuild=true
   steps:
 
-  - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+  - ${{ if ne(variables['System.TeamProject'], 'public') }}:
     - task: NuGetAuthenticate@0
 
   - script: >-
